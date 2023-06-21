@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #00BFFF;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Lab 01</h3>
+</header>
+
+<section>
+  <nav> <!--Aba Lateral com Links para arquivos pessoais de membros da tarefa individual.-->
+    <h4><center>Membros do grupo</center></h4>
+    <ul><center>
+      <li><a href="Videos e eu/index.html" target="_blank">César Augusto Brilhante Teixeira</a></li>
+	  <li><a href="Videos e Eu/Gabriel Silva Cajueiro de Campos_11018515.html" target="_blank">Gabriel Silva Cajueiro de Campos</a></li>
+	  <li><a href="#">Mayara Maria Triveloni</a></li>
+    </center></ul>
+    <h4><center>Relatórios</center></h4>
+      <ul><center>
+        <li><a href="#">Lab 2</a></li>
+        <li><a href="#">Lab 3</a></li>
+		<li><a href="#">Lab 4</a></li>
+	  </center></ul>
+  </nav>
+  
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h1><center> Lab 01</center></h1>
+    <h2><center>Objetivo</center></h2>
+    <p><justify>O Laboratório 01, realizado pelos integrantes César Augusto Brilhante Teixeira, Gabriel Silva Cajueiro de Campos, Mayara Maria Triveloni tem por objetivo a manipulação de códigos em Python através de Comandos em terminal para alteração de parâmetros de imagem e vídeo, tanto para imagens geradas em câmera, como para imagens fornecidas.</justify></p>
+<p><justify>Para a realização deste laboratório, foi utilizado o Notepad++ configurado em linguagem HTML para a criação do código da disciplina e um editor simples de imagem para as manipulações mais básicas relacionadas a montagens de fotos dos integrantes da equipe.</justify></p>
+	  <h2><center>Manipulação de Imagem</center></h2>
+	  		<p><center> Na linha 4 em "img = cv.imread('messi5.jpg',0)", o parâmetro numérico 0 define se a imagem será ou não em preto e branco.</center	></p>
+				<p><center><img src="Imagem L1_1.png" alt="Minha Foto"></center></p>
+
+	  
+	  <h2><center>Manipulação de Frame de Vídeo</center></h2>
+	  		<p><center> Na linha 15 em "time.sleep(1/25.0)", o numero de frames por segundo é definido pelo valor dividido por 1, para acelerar o vídeo, seria apenas aumentar o valor de 25 para 40 e o contrário para diminuir a velocidade.</center	></p>
+				<p><center><img src="Imagem L1_2.png" alt="Minha Foto"></center></p>
+	  
+	  <h2><center>Salvamento de Imagem</center></h2>
+	  		<p><center> Selecionada está a rotina de salvamento. e a de fechamento do programa. Ambas as rotinas interrompem o loop while e levam a aplicação a fechar. No caso a rotina de fechamento com o botão q foi replicada, substituindo o botão q pelo x e inserindo a função cv.imwrite para salvar os frames da foto no PC.</center	></p>
+				<p><center><img src="Imagem L1_3.png" alt="Minha Foto"></center></p>
+	  
+	  <h2><center>Inversão de Vídeo</center></h2>
+	  		<p><center> Está selecionada a função de reversão do vídeo que originalmente está comentada no código. A mudança para que o vídeo seja salvo corretamente é retirar essa linha de comentário.</center	></p>
+				<p><center><img src="Imagem L1_4.png" alt="Minha Foto"></center></p>
+	  
+	  	  <h2><center>Parte Final - Foto de Integrantes do Grupo</center></h2>
+	  		<p><center> </center></p>
+				<p><center><img src="FotoGrupo.png" alt="Minha Foto"></center></p>
+	  
+	  	  	  <h2><center>Parte Final - Foto Cesar</center></h2>
+	  		<p><center> </center></p>
+				<p><center><img src="Parte3/cesar.png" alt="Cesar"></center></p>
+	  
+	  	  	  	  <h2><center>Parte Final - Foto Gabriel</center></h2>
+	  		<p><center> </center></p>
+				<p><center><img src="Parte3/gabriel.png" alt="Gabriel"></center></p>
+	  	  	  	  <h2><center>Parte Final - Foto Mayara</center></h2>
+	  		<p><center> </center></p>
+				<p><center><img src="Parte3/mayara.png" alt="Mayara"></center></p>
+	  
+	  	  	  <h2><center>Parte Final - Avatares</center></h2>
+				<p><center><img src="GrupoAvatar.png" alt="Grupo Avatar"></center></p>
+	  
+	  	  	  	  <h2><center>Vídeos</center></h2>
+				<center><a href="Parte3/rapido_pessoa.avi" target="_blank"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Video Rápido - Pessoa.</button> </a>
+	  			<a href="Parte3/lento_pessoa.avi" target="_blank"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Video Lento - Pessoa.</button> </a>
+	  			<a href="Parte3/objeto_rapido.avi" target="_blank"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Video Rápido - Objeto.</button> </a>
+	  			<a href="Parte3/objeto_lento.avi" target="_blank"><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Video Lento - Objeto.</button> </a></center>
+	 	 
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
