@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #008000;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head> #cabeçalho
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Projeto</h3>
+</header>
+
+<section>
+  <nav> <!--Aba Lateral com Links para arquivos pessoais de membros da tarefa individual.-->
+    <h4><center>Membros do grupo</center></h4>
+    <ul><center>
+      <li><a href="../UFABC_PV_LAB1-main/Videos e eu/index.html" target="_blank">César Augusto Brilhante Teixeira</a></li>
+	  <li><a href="../UFABC_PV_LAB1-main/Videos e Eu/Gabriel Silva Cajueiro de Campos_11018515.html" target="_blank">Gabriel Silva Cajueiro de Campos</a></li>
+	  <li><a href="../Videos e Eu/eu_sou_mayara_triveloni/eu_sou_mayara_triveloni.html">Mayara Maria Triveloni</a></li>
+    </center></ul>
+    <h4><center>Relatórios</center></h4>
+      <ul><center>
+        <li><a href="../index.html" target ="_blank">Lab 1</a></li>
+        <li><a href="../lab2/lab_02_Processamento_de_Vídeo.html" target ="_blank">Lab 2</a></li>
+        <li><a href="../lab3/lab_03_Processamento_de_Vídeo.html">Lab 3</a></li>
+		    <li><a href="#">Lab 4</a></li>
+	  </center></ul>
+  </nav>
+  
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h2><center>Detecção de Transistores Danificados</center></h2>
+    <br>
+    <p><center>O <b>transistor</b> é um dispositivo semicondutor utilizado para amplificar ou atenuar a intensidade da corrente elétrica em circuitos eletrônicos. Resumidamente, é possível trabalhar de diversas maneiras dependendo da configuração adotada. Segue na imagem abaixo, exemplos dos transistores mais utilizados em circuitos eletrônicos:</center></p>
+    <br>
+    <p><center><img src="TransistorSymbol.png" alt="Transistores"></center></p>
+    <br>
+    <p><center>Possíveis danos que podem ocorrer na estrutura física do transistor:</center></p>
+    <p><center><img src="transistor.png" alt="Transistores"></center></p>
+
+				
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
