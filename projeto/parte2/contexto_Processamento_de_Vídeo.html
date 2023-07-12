@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>Projeto - Parte 1 - Contexto</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #008000;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head> #cabeçalho
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Projeto Final - Detecção de Transistores Danificados</h3>
+</header>
+
+<section>
+  <!--
+  <nav>
+    <h4><center>Membros do Grupo</center></h4>
+    <ul><center>
+      <li><a href="../UFABC_PV_LAB1-main/Videos e eu/index.html" target="_blank">César Augusto Brilhante Teixeira</a></li>
+	  <li><a href="../UFABC_PV_LAB1-main/Videos e Eu/Gabriel Silva Cajueiro de Campos_11018515.html" target="_blank">Gabriel Silva Cajueiro de Campos</a></li>
+	  <li><a href="../Videos e Eu/eu_sou_mayara_triveloni/eu_sou_mayara_triveloni.html">Mayara Maria Triveloni</a></li>
+    </center></ul>
+    <h4><center>Relatórios</center></h4>
+      <ul><center>
+        <li><a href="../index.html" target ="_blank">Lab 1</a></li>
+        <li><a href="../lab2/lab_02_Processamento_de_Vídeo.html" target ="_blank">Lab 2</a></li>
+        <li><a href="../lab3/lab_03_Processamento_de_Vídeo.html">Lab 3</a></li>
+		    <li><a href="#">Lab 4</a></li>
+	  </center></ul>
+  </nav>-->
+  
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h1><center>Introdução</center></h1>
+    
+	<center>
+	<p>O <b>transistor</b> é um tipo de dispositivo semicondutor utilizado para amplificar ou atenuar a intensidade da corrente elétrica em circuitos eletrônicos.
+	<p>Resumidamente, é possível trabalhar de diversas maneiras dependendo da configuração adotada.Eles são compostos por três camadas de material semicondutor, geralmente silício ou germânio, e são amplamente utilizados na construção de circuitos eletrônicos.</p>
+	<p>Os três tipos básicos de transistores são os transistores de junção bipolar (BJT), os transistores de efeito de campo de junção (JFET) e os transistores de efeito de campo de metal-óxido-semicondutor (MOSFET).Segue na imagem abaixo, exemplos dos transistores mais utilizados em circuitos eletrônicos:</p>
+	<br>
+	<div class="image123">
+		<img src="transistor.gif" height="400" width="400">
+		<img src="TransistorSymbol.png"/ height="400" width="400">
+		<img src="modelos.jpeg"/ height="400" width="400">
+	</div>
+	<h1>Problemática</h1>
+	<p>A detecção de falta de terminais em semicondutores é crucial na indústria para evitar falhas e garantir a qualidade dos produtos eletrônicos. Esses sistemas utilizam técnicas avançadas de inspeção visual automatizada e testes elétricos para identificar possíveis problemas nos terminais dos semicondutores. A detecção precoce permite correções antes que os produtos defeituosos cheguem ao mercado, reduzindo custos de recall e mantendo a competitividade. Além disso, esses sistemas melhoram a eficiência do processo de fabricação, acelerando a produção e fortalecendo a confiança dos consumidores na indústria de semicondutores.</p>
+    <br>
+	<p>Um sistema de detecção de falta de terminais em semicondutores é um conjunto de técnicas e dispositivos projetados para identificar possíveis falhas nos terminais de semicondutores durante o processo de fabricação. Essa detecção é de extrema importância, uma vez que a presença de falhas nos terminais pode levar a mau funcionamento ou até mesmo à inutilização dos semicondutores.
+
+Esse sistema utiliza técnicas como inspeção visual automatizada, testes elétricos e análise de imagem para identificar qualquer anomalia nos terminais dos semicondutores. Além disso, algoritmos avançados de análise de dados são aplicados para aumentar a eficiência e precisão do processo de detecção.
+
+A detecção precoce de falta de terminais em semicondutores é crucial para a indústria, pois permite que as falhas sejam corrigidas antes que os produtos defeituosos cheguem ao mercado. Isso ajuda a reduzir custos de recall e garantir a qualidade dos semicondutores utilizados em uma variedade de produtos eletrônicos, desde dispositivos móveis até equipamentos industriais avançados.
+
+Além disso, a implementação de um sistema de detecção de falta de terminais em semicondutores pode melhorar a eficiência do processo de fabricação, reduzindo o tempo de inspeção manual e aumentando a taxa de detecção de falhas. Isso resulta em uma produção mais rápida e confiável, fortalecendo a competitividade da indústria de semicondutores.</p>
+    
+    <br>
+    <p><center>Possíveis danos que podem ocorrer na estrutura física do transistor:</center></p>
+    <p><center><img src="transistor.png" alt="Transistores"></center></p>
+	
+	<h1> Entrevistas </h1>
+	<h2> Guilherme Castellan - Engenheiro de Vendas Eng. Automotiva - Grupo JAV </h2>
+	<p>A verificação de componentes antes da montagem é crucial para garantir a qualidade e o bom funcionamento de um produto. Ela permite identificar eventuais defeitos ou danos nos componentes, evitando problemas futuros. Além disso, a verificação prévia ajuda a evitar retrabalho e desperdício de tempo e recursos. Também contribui para a segurança, pois componentes danificados podem causar acidentes. Por fim, a verificação prévia aumenta a confiabilidade do produto final, garantindo a satisfação dos clientes e a reputação da empresa.</p>
+	<h2> Augusto Cesar Teixeira - Engenheiro de Testes - Marelli</h2>
+	<p>A identificação de componentes falhos em uma PCB via sistema de visão é de extrema importância para o mercado, pois garante a qualidade dos produtos e a satisfação dos clientes. A detecção prévia de componentes defeituosos evita retrabalho, reduz custos de reparo e aumenta a eficiência do processo de produção. Além disso, contribui para a reputação da empresa, demonstrando compromisso com a excelência e confiabilidade dos produtos oferecidos. Isso fortalece a posição competitiva da empresa no mercado, conquistando a confiança dos clientes e abrindo oportunidades para novos negócios</p>			
+	<h2> Fernado Silva - Engenheiro de Testes - Linhas de PCB</h2>
+	<p>Um sistema de visão para validar componentes antes de montar uma PCB traz benefícios significativos. Em primeiro lugar, ele permite a detecção precisa de componentes defeituosos ou danificados, evitando a montagem de placas com falhas. Isso reduz o retrabalho, os custos de reparo e o tempo de produção. Além disso, o sistema de visão garante a qualidade e confiabilidade dos produtos, aumentando a satisfação dos clientes e a reputação da empresa. Também contribui para a segurança, identificando problemas potenciais que poderiam resultar em falhas ou acidentes. Por fim, o uso de um sistema de visão aumenta a eficiência e a precisão do processo de montagem, resultando em uma produção mais ágil e de alta qualidade. </p>
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
