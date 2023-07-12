@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>Lab 4</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #008000;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Lab 04</h3>
+</header>
+
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h1><center> Lab 04</center></h1>
+    <h2><center>Objetivo</center></h2>
+    <p><center>Este relatório tem como objetivo descrever a teoria dos histogramas, que consiste na representação gráfica da distribuição de intensidades dos pixels em uma imagem. Serão apresentados os conceitos básicos relacionados aos histogramas, incluindo a interpretação estatística das intensidades, o uso do histograma para análise de contraste e distribuição de intensidades, e a importância do histograma em aplicações como processamento de imagens, visão computacional e análise de dados visuais. O relatório visa destacar a utilidade e as aplicações práticas dos histogramas na compreensão e manipulação de imagens, fornecendo uma visão geral concisa e informativa sobre o tema.</center></p>
+	<h2><center>Metodologia</center></h2>
+	<p><center>Utilizar o OpenCV com a webcam disponibilizada em sala para realizar a aquisição das imagens - e as ferramentas de python para escrever os códigos de binarização e equalização.</center></p>
+<br>
+		<h2><center>Imagens em Tons de Cinza e Histograma</center></h2>
+	  	<p><center>De modo geral, durante a prática as imagens foram convertidas para tons de cinza, calcular o histograma, e realizar a equalização do histograma.</center></p>
+        <p><center>Para realizar a primeira parte do sistema foi criado um programa para adquirir as imagens da webcam e salvar a imagem de entrada como cinza, a imagem equalizada - incluindo os histogramas.</center></p> 
+		
+        <h3><center>Parte 1 - Imagem Cinza e Histograma</center></h3>
+		<h4><center>Imagens Cesar</center></h4>
+		<p><center>Imagem original tirada da camera:</center></p>
+        <p><center><img src="parte1/cesar_colorida.png" alt="Cesar"></center></p>
+		<p><center>Imagem em cinza:</center></p>
+        <p><center><img src="parte1/cesar_cinza.png" alt="Cesar Cinza"></center></p>
+        <p><center>Imagem equalizada:</center></p>
+        <p><center><img src="parte1/cesar_equalizada.png" alt="Cesar Eq"></center></p>
+		<p><center>Histograma das imagens:</center></p>
+        <p><center><img src="parte1/cesar_hist.png" alt="Cesar Hist"></center></p>
+		<h4><center>Imagens Mayara</center></h4>
+		<p><center>Imagem em cinza:</center></p>
+        <p><center><img src="parte1/mayara_cinza.png" alt="Mayara"></center></p>
+        <p><center>Imagem equalizada:</center></p>
+        <p><center><img src="parte1/mayara_equalizada.png" alt="Mayara Eq"></center></p>
+		<p><center>Histograma - Equalizado</center></p>
+        <p><center><img src="parte1/mayara_hist.png" alt="Mayara Hist"></center></p>
+		<p><center>Histograma - Equalizado</center></p>
+        <p><center><img src="parte1/mayara_hist_eq.png" alt="Mayara Hist Eq"></center></p>
+		
+		<h3><center>Parte 2 - Imagem Cinza e Histograma</center></h3>
+        <p><center>Na parte 2 ao invés de realizar o processo numa imagem prévia - usamos a webcam para capturar os videos em tempo real, tanto cinza quanto equalizado.</center></p>
+        <h5><center>Cesar</center></h5>  
+		<h5><center>Video Cinza</center></h5>  
+        <p><center><img src="parte2/cesar_video_cinza.webm" alt="V-Cinza"></center></p>
+		<h5><center>Video Equalizado</center></h5>  
+		<p><center><img src="parte2/cesar_video_equalizada.webm" alt="V-Cinza-Eq"></center></p>
+		
+		<h3><center>Parte 3 - 	Binarização e Limiarização</center></h3>
+		<p><center>O processo de binarização e limiarização de imagens envolve converter uma imagem em preto e branco, atribuindo um valor de limiar para separar os pixels em duas classes: uma acima do limiar, que se torna branco, e outra abaixo do limiar, que se torna preta.</center></p> 
+		<h4><center>Tipos de Limiarização:</center></h4>
+		<p><center>Adaptive Thresholding: Método de limiarização de imagens que ajusta o valor de limiar localmente com base nas características dos pixels vizinhos. Isso permite adaptar o limiar em diferentes regiões da imagem, resultando em melhores resultados de segmentação, especialmente em casos de variação de iluminação.</center></p>
+		<p><center>Otsu's Thresholding: Método de limiarização de imagens que determina automaticamente o valor de limiar ideal com base na variância das intensidades dos pixels. Ele busca encontrar o ponto de limiar que maximize a separação entre as classes de pixels, permitindo uma segmentação eficiente e automatizada. </center></p>
+		<p><center>Simple Thresholding: Também conhecido como limiarização simples, é um método básico de limiarização de imagens. Consiste em definir um valor fixo de limiar, em que os pixels com intensidade acima desse limiar são atribuídos a uma classe (por exemplo, branco) e os pixels com intensidade abaixo do limiar são atribuídos a outra classe (por exemplo, preto). </center></p>
+		<h4><center>Imagens Cesar</center></h4>
+		<p><center>Imagem em cinza:</center></p>
+        <p><center><img src="parte3/cesar_cinza.png" alt="Cesar Cinza"></center></p>
+        <p><center>Imagem equalizada:</center></p>
+        <p><center><img src="parte3/cesar_limiarizado.png" alt="Cesar Limiarizado"></center></p>
+		
+		<h4><center>Imagens Mayara</center></h4>
+		<p><center>Imagem Mayara-Adaptive Thresholding:</center></p>
+        <p><center><img src="parte3/mayara-Adaptive Thresholding.png" alt="Cesar"></center></p>
+		<p><center>Imagem Mayara-Otsus Thresholding:</center></p>
+        <p><center><img src="parte3/mayara-Otsus Binarization.png" alt="Cesar"></center></p>
+		<p><center>Imagem Mayara-Simple Thresholding:</center></p>
+        <p><center><img src="parte3/mayara-Simple Thresholxding.png" alt="Cesar"></center></p>
+		
+		<h3><center>Parte 4 - 	Equalização</center></h3>
+		<h4><center>Imagens Cesar</center></h4>
+		<p><center>Imagem Normal:</center></p>
+        <p><center><img src="parte4/cesar_Normal.png" alt="Cesar-Normal"></center></p>
+        <p><center>Imagem equalizada:</center></p>
+        <p><center><img src="parte4/cesar_Equalizado.png" alt="Cesar-Cores-Eq"></center></p>
+        <hr>
+        <br>
+		
+		<h2><center>Conclusões</center></h2>
+		<p><center>A equalização nas cores é uma técnica eficaz para melhorar o contraste e a distribuição das cores em uma imagem. Ao aplicar a equalização do histograma em cada canal de cor separadamente, é possível realçar detalhes e obter uma representação mais equilibrada e vívida das cores. Essa abordagem é útil para melhorar a qualidade visual de imagens com problemas de contraste ou distribuição de cores desbalanceada. A equalização nas cores pode ser uma etapa importante no processamento de imagens para obter resultados mais satisfatórios em termos de visualização e análise das cores presentes na imagem.</center></h2>
+				
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
