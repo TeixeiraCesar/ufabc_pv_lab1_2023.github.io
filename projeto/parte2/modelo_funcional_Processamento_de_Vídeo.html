@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>Projeto - Parte 1 - Contexto</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #008000;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head> #cabeçalho
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Projeto Final - Detecção de Transistores Danificados</h3>
+</header>
+
+<section>
+  <!--
+  <nav>
+    <h4><center>Membros do Grupo</center></h4>
+    <ul><center>
+      <li><a href="../UFABC_PV_LAB1-main/Videos e eu/index.html" target="_blank">César Augusto Brilhante Teixeira</a></li>
+	  <li><a href="../UFABC_PV_LAB1-main/Videos e Eu/Gabriel Silva Cajueiro de Campos_11018515.html" target="_blank">Gabriel Silva Cajueiro de Campos</a></li>
+	  <li><a href="../Videos e Eu/eu_sou_mayara_triveloni/eu_sou_mayara_triveloni.html">Mayara Maria Triveloni</a></li>
+    </center></ul>
+    <h4><center>Relatórios</center></h4>
+      <ul><center>
+        <li><a href="../index.html" target ="_blank">Lab 1</a></li>
+        <li><a href="../lab2/lab_02_Processamento_de_Vídeo.html" target ="_blank">Lab 2</a></li>
+        <li><a href="../lab3/lab_03_Processamento_de_Vídeo.html">Lab 3</a></li>
+		    <li><a href="#">Lab 4</a></li>
+	  </center></ul>
+  </nav>-->
+  
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h1><center>Introdução</center></h1>
+    
+	<center>
+	<p>O <b>transistor</b> é um tipo de dispositivo semicondutor utilizado para amplificar ou atenuar a intensidade da corrente elétrica em circuitos eletrônicos.
+	<p>Resumidamente, é possível trabalhar de diversas maneiras dependendo da configuração adotada.Eles são compostos por três camadas de material semicondutor, geralmente silício ou germânio, e são amplamente utilizados na construção de circuitos eletrônicos.</p>
+	<p>Os três tipos básicos de transistores são os transistores de junção bipolar (BJT), os transistores de efeito de campo de junção (JFET) e os transistores de efeito de campo de metal-óxido-semicondutor (MOSFET).Segue na imagem abaixo, exemplos dos transistores mais utilizados em circuitos eletrônicos:</p>
+	<br>
+	<div class="image123">
+		<img src="ilu1.jpg" height="400" width="400">
+		<img src="espec3.png"/ height="400" width="400">
+		<img src="jitter.png"/ height="400" width="400">
+	</div>
+	<h1>Desafios do contexto</h1>
+	<div div style = text-align:left>
+	<p>A identificação de features de componentes usando visão de máquina é uma área de aplicação comum em diversos setores industriais, como manufatura, automação e controle de qualidade. Essa técnica envolve o uso de algoritmos de processamento de imagem para extrair características específicas de componentes ou objetos, a fim de identificá-los, classificá-los ou inspecioná-los. No entanto, existem alguns desafios técnicos que precisam ser considerados ao lidar com a identificação de features usando visão de máquina. Alguns desses desafios incluem a iluminação, o jitter no processamento e as especificações da câmera, como distância focal, casamento com o tipo de lente e sincronismo com strobbing.</p>
+	<li>Desafios de iluminação: A iluminação inadequada pode afetar significativamente a qualidade das imagens adquiridas e, consequentemente, a capacidade de identificar as features corretamente. Variações na intensidade da luz, sombras, reflexos e iluminação não uniforme podem dificultar a detecção precisa das características do componente. Para superar esses desafios, técnicas de iluminação controlada, como iluminação direcional, difusa ou em ângulo, podem ser usadas para melhorar o contraste e realçar as características relevantes.</li>
+	<li>Desafios de jitter no processamento: O jitter é uma forma de ruído que pode ocorrer durante a aquisição de imagens ou no processamento subsequente. Pode ser causado por vibrações mecânicas, instabilidade na montagem do sistema ou movimentos indesejados dos objetos sendo inspecionados. O jitter pode afetar negativamente a precisão da identificação das features, levando a resultados inconsistentes. É importante minimizar o jitter usando técnicas como estabilização de imagens ou ajuste dos algoritmos de processamento para lidar com movimentos indesejados.</li>
+	<li>Especificações da câmera: As especificações da câmera desempenham um papel crucial na identificação de features usando visão de máquina. A distância focal da câmera determina a área de visualização e a resolução espacial disponível. É necessário selecionar a distância focal adequada com base no tamanho e na complexidade das features a serem identificadas. Além disso, o tipo de lente escolhido deve ser adequado para o objetivo da aplicação, levando em consideração a profundidade de campo e outras características ópticas relevantes.</li>
+	<li>O sincronismo com strobbing é uma técnica usada para controlar o tempo de exposição da câmera com a iluminação. Ela envolve a coordenação precisa entre a câmera e a fonte de iluminação, a fim de obter imagens nítidas e livres de borrões. O strobbing permite congelar o movimento do objeto durante a exposição, o que é especialmente útil ao lidar com objetos em movimento rápido. Isso ajuda a capturar imagens nítidas das features do componente, melhorando a precisão da identificação.</li>
+	<p>Em resumo, a identificação de features de componentes usando visão de máquina é uma técnica valiosa para várias aplicações industriais. No entanto, é importante enfrentar desafios como a iluminação adequada, jitter no processamento e especificações da câmera para garantir resultados precisos e confiáveis. Esses desafios podem ser superados por meio do uso de técnicas apropriadas de iluminação, estabilização de imagem e seleção cuidadosa das especificações da câmera, incluindo a distância focal, o casamento com o tipo de lente e o sincronismo com strobbing.</p>
+    <br>
+	</div>
+	<h2> Jitter </h2>
+	<div div style = text-align:left
+	<p>No contexto do processamento de imagem, o jitter refere-se a variações indesejadas no posicionamento ou na estabilidade dos objetos ou da câmera durante a aquisição de imagens. Essas variações podem afetar negativamente a qualidade das imagens capturadas e dificultar o processamento subsequente. O jitter pode ser causado por vários fatores, como movimentos involuntários da câmera, trepidações mecânicas, vibrações ambientais ou instabilidade na fixação dos objetos.</p>
+	<h4> O jitter no processamento de imagem pode ter os seguintes efeitos prejudiciais:</h4>
+	<li>Degradação da nitidez: O jitter pode resultar em imagens borradas ou desfocadas, prejudicando a clareza e a definição dos detalhes. Movimentos ou vibrações durante a aquisição da imagem podem levar a sobreposição de pixels adjacentes, causando uma aparência embaçada.</li>
+	<li>Dificuldade na extração de características: O jitter pode interferir na detecção e extração precisa das características desejadas na imagem. Algoritmos de processamento de imagem, como detecção de bordas, segmentação ou reconhecimento de padrões, podem ser impactados negativamente pelo jitter, resultando em resultados imprecisos ou inconsistentes.</li>
+	<li>Problemas de registro e alinhamento: O jitter pode causar desalinhamento entre imagens ou frames consecutivos, dificultando a fusão ou o alinhamento adequado. Isso pode ser problemático em aplicações que envolvem registro de imagens, como em técnicas de imagem estereoscópica ou composição panorâmica.</li>
+	<li>Distorção da geometria: O jitter pode introduzir distorções na geometria da imagem, especialmente quando ocorre movimento da câmera. Isso pode afetar a precisão das medições ou o dimensionamento correto dos objetos na imagem.</li>
+	<h4>Para mitigar os efeitos do jitter no processamento de imagem, podem ser adotadas algumas medidas:</h4>
+	<li>Estabilização da câmera: Utilização de técnicas de estabilização, como tripés, sistemas de estabilização óptica ou eletrônica de imagem (OIS/EIS) ou montagens mecânicas que reduzem a trepidação da câmera.
+	<li>Aquisição de imagens rápidas: A utilização de tempos de exposição curtos ou captura de imagens em alta velocidade pode minimizar o impacto do jitter, reduzindo a probabilidade de movimentos indesejados afetarem a imagem.</li>
+	<li>Pós-processamento de estabilização: Algoritmos de pós-processamento podem ser aplicados para compensar o jitter e melhorar a nitidez das imagens. Esses algoritmos podem corrigir deslocamentos e desvios nas imagens, aumentando a clareza e a qualidade das mesmas.</li>
+	<p>Em resumo, o jitter no processamento de imagem pode prejudicar a qualidade das imagens capturadas, dificultar a extração de características e introduzir distorções indesejadas. É importante adotar medidas para minimizar o jitter, como estabilização da câmera, aquisição rápida de imagens e aplicação de algoritmos de pós-processamento para compensação. Isso ajuda a garantir imagens de melhor qualidade e resultados mais precisos nas aplicações de processamento de imagem.</p> 
+	</div>
+	<h3> Exemplo Jitter no sinal </h3>
+	<img src="jitter.png"/ height="400" width="800">
+	
+	<h2> Iluminação </h2>
+	<div div style = text-align:left
+	<p>No contexto de visão de máquina, a iluminação desempenha um papel crucial na aquisição e no processamento de imagens. Uma iluminação adequada é essencial para obter imagens de alta qualidade e garantir a precisão das técnicas de visão de máquina, como detecção de objetos, reconhecimento de padrões, segmentação e medições.A seguir, estão alguns aspectos importantes da iluminação no contexto da visão de máquina:</p>
+	<li>Contraste: A iluminação adequada ajuda a melhorar o contraste entre os objetos e o fundo na imagem. Um bom contraste é essencial para destacar as características dos objetos e facilitar sua detecção e segmentação. Uma iluminação inadequada pode resultar em baixo contraste, dificultando a extração precisa das informações relevantes.</li>
+	<li>Uniformidade: A iluminação uniforme é importante para evitar variações indesejadas no brilho ou na intensidade da luz na imagem. Variações na iluminação podem levar a problemas de detecção e classificação de objetos, pois podem introduzir artefatos ou distorções nas imagens capturadas.</li>
+	<li>Eliminação de sombras: Sombras podem causar problemas significativos na visão de máquina, pois podem alterar a aparência dos objetos e dificultar sua detecção e segmentação corretas. Uma iluminação adequada deve ser projetada para minimizar ou eliminar as sombras, garantindo uma representação mais precisa dos objetos na imagem.</li>
+	<li>Redução de reflexos: Reflexos em superfícies brilhantes podem distorcer a aparência dos objetos e prejudicar a extração correta de características. A iluminação deve ser projetada de forma a reduzir reflexos indesejados, seja por meio de técnicas de iluminação direcional, difusa ou ângulos de incidência adequados.</li>
+	<li>Adaptação à aplicação: A iluminação deve ser ajustada de acordo com a aplicação específica de visão de máquina. Por exemplo, em aplicações de inspeção de qualidade, a iluminação pode ser projetada para destacar defeitos ou características específicas. Em outras aplicações, como reconhecimento de objetos, a iluminação pode ser otimizada para realçar características distintas dos objetos.</li>
+	<li>Controle e sincronização: Em algumas situações, o controle preciso da iluminação e a sincronização com a aquisição de imagens podem ser necessários. Isso pode ser alcançado por meio de técnicas como strobing, que envolve o uso de fontes de luz pulsante sincronizadas com o tempo de exposição da câmera. Esse controle pode ajudar a congelar o movimento do objeto, melhorando a nitidez e a precisão das imagens capturadas.</li>
+	<p>Em resumo, a iluminação adequada é fundamental no contexto da visão de máquina. Uma iluminação bem projetada e controlada pode melhorar o contraste, eliminar sombras e reflexos indesejados, além de fornecer imagens de alta qualidade para as técnicas de processamento de imagem. Ao considerar a iluminação para uma aplicação de visão de máquina, é importante levar em conta os requisitos específicos da aplicação e adaptar a iluminação de acordo.</p>
+	</div>
+	<div class="image123">
+		<img src="ilu1.jpg"/ height="400" width="800">
+		<img src="ilu2.png"/ height="400" width="800">
+		<img src="ilu3.jpg"/ height="400" width="800">
+	</div>
+	<h2> Especificações da Camera </h2>
+	<div div style = text-align:left>
+	<p>As especificações da câmera e da lente desempenham um papel fundamental na visão de máquina. Esses elementos são essenciais para adquirir imagens de alta qualidade e garantir a precisão das técnicas de processamento de imagem. Aqui estão algumas razões pelas quais as especificações da câmera e da lente são importantes na visão de máquina:
+	<li>Resolução: A resolução da câmera é uma especificação crítica, pois determina a quantidade de detalhes capturados na imagem. Quanto maior a resolução, mais informações podem ser extraídas dos objetos, permitindo a detecção e a análise mais precisas de características. Uma alta resolução é especialmente importante em aplicações que exigem a identificação de detalhes finos ou a medição precisa de objetos.</li>
+	<li>Sensibilidade à luz: A sensibilidade à luz, expressa em termos de ISO ou sensibilidade do sensor, é um fator importante na visão de máquina, especialmente em ambientes com iluminação variável. Uma câmera com boa sensibilidade à luz pode capturar imagens com baixo ruído e melhorar a qualidade da imagem em condições de baixa luminosidade. Isso é particularmente relevante em aplicações de visão noturna ou em ambientes industriais com iluminação desafiadora.</li>
+	<li>Faixa dinâmica: A faixa dinâmica é a capacidade da câmera de capturar detalhes tanto em áreas muito claras quanto muito escuras da cena. Uma boa faixa dinâmica permite capturar objetos com alto contraste, sem perda de informações em áreas de luz intensa ou sombras. Isso é especialmente importante em aplicações de visão de máquina em ambientes com iluminação desafiadora, como em inspeções de qualidade ou detecção de falhas.</li>
+	<li>Taxa de quadros: A taxa de quadros da câmera é o número de imagens capturadas por segundo. Uma taxa de quadros alta é essencial em aplicações que envolvem objetos em movimento rápido, como rastreamento de objetos ou inspeção de linha de produção. Garantir uma taxa de quadros adequada é importante para capturar imagens nítidas e evitar borrões de movimento.</li>
+	<li>Distância focal e tipo de lente: A distância focal da lente e o tipo de lente utilizada têm um impacto direto no campo de visão e na ampliação da imagem. A escolha correta da lente é fundamental para capturar a área de interesse com a resolução e o campo de visão adequados. Dependendo da aplicação, podem ser utilizadas lentes de distância focal fixa, lentes teleobjetivas para ampliação de objetos distantes ou lentes grande angulares para capturar uma área mais ampla.
+	<li>Calibração e correção de distorção: Algumas câmeras e lentes possuem recursos de calibração e correção de distorção. A calibração permite compensar distorções ópticas, como distorção de lente, vignetting ou distorção de perspectiva. Isso é importante para garantir medidas precisas e uma representação precisa da cena na imagem.</li>
+	<p>Em suma, as especificações da câmera e da lente desempenham um papel crítico na visão de máquina. Elas afetam diretamente a qualidade da imagem, a capacidade de capturar detalhes, a sensibilidade à luz, a faixa dinâmica, a taxa de quadros e a correção de distorção. Ao escolher uma câmera e uma lente para uma aplicação de visão de máquina, é essencial considerar cuidadosamente essas especificações para garantir resultados precisos e confiáveis.</p>
+	</div>
+	<div class="image123">
+	<img src="espec3.png"/ height="205" width="500">
+	</div>
+	<h2> Sincronimos & Iluminação </h2>
+	<div div style = text-align:left>
+	<p>O sincronismo com strobbing é uma técnica utilizada em sistemas de visão de máquina para controlar o tempo de exposição da câmera em sincronia com uma fonte de iluminação pulsante, conhecida como strobe light. Essa técnica é comumente aplicada em aplicações industriais, como inspeção de alta velocidade, rastreamento de objetos em movimento rápido e captura de imagens nítidas em condições de iluminação desafiadoras.
+	O objetivo do sincronismo com strobbing é congelar o movimento dos objetos durante o tempo de exposição da câmera, reduzindo ou eliminando o desfoque de movimento. A ideia é que a câmera capture a imagem no momento em que a fonte de iluminação está no auge do seu pulso, fornecendo uma iluminação intensa e instantânea. Dessa forma, mesmo que o objeto esteja em movimento, a imagem capturada apresenta uma alta nitidez.
+	A implementação do sincronismo com strobbing envolve a coordenação precisa entre a câmera e a fonte de iluminação. A câmera deve estar configurada para disparar a exposição no momento adequado, quando o strobe light estiver emitindo seu pulso de iluminação mais intenso. Isso pode ser alcançado por meio de sinais de disparo (triggers) ou interfaces de sincronização disponíveis na câmera.
+	Além disso, é importante considerar a frequência de strobbing e a taxa de quadros da câmera para garantir a compatibilidade e a sincronia correta. A frequência de strobbing é determinada pela aplicação específica e pelo tempo necessário para congelar o movimento dos objetos com eficácia. A taxa de quadros da câmera deve ser adequada para capturar múltiplos pulsos de iluminação e garantir a aquisição de imagens claras e nítidas.
+	Os benefícios do sincronismo com strobbing incluem a melhoria da nitidez das imagens, a redução do desfoque de movimento e a capacidade de capturar objetos em alta velocidade com detalhes precisos. Essa técnica é especialmente útil em situações em que a iluminação ambiente é insuficiente, há objetos em movimento rápido ou a inspeção requer imagens com alta clareza e detalhamento.
+	Em resumo, o sincronismo com strobbing é uma técnica valiosa no campo da visão de máquina. Permite o congelamento do movimento dos objetos durante o tempo de exposição da câmera, resultando em imagens mais nítidas e detalhadas. Ao sincronizar adequadamente a câmera e a fonte de iluminação pulsante, é possível alcançar resultados de alta qualidade em aplicações que exigem precisão e clareza na captura de imagens.</p>
+	</div>
+		<div class="image123">
+	<img src="strobbing.jpg"/ height="200" width="250">
+	</div>
+	<h1> Conceitos explorados e métricas esperadas </h1>
+    <p> Além da identificação dos componentes nosso trabalho visa propor o estudo da importância dos fatores mencionados acima e como isso pode ser determinante no sucesso da aplicação. Para isso usaremos dois cenários:</p>
+	<h3> Cenário 1 </h3>
+	<h4> Hardwares:</h4>
+		<li>Webcam comercial</li>
+		<img src="webcam.jpg"/ height="200" width="250">
+		<li>Iluminação via holofote</li>
+		<img src="ringlight.jpg"/ height="200" width="250">
+	<h4>Software:</h4>
+		<li>Baseado em Linux</li>
+		<li>Pyhton</li>
+	<h3> Cenário 2 </h3>
+	<h4>Hardwares:</h4>
+		<li>Camera Basler industrial monocromática</li>
+		<img src="basler.jpg"/ height="200" width="250">
+		<li>Lentes industriais</li>
+		<img src="lente.jpg"/ height="200" width="250">
+		<li>Iluminação com entrada de strobbing</li>
+		<img src="iluminacao.jpg"/ height="200" width="250">
+	<h4>Software:</h4>
+		<li>Linux Real-Time com FPGA</li>
+		<li>Pyhton & LabVIEW</li>
+    <br>
+	<h2> Modelo Funcional </h2>
+	<h1> Cenário 1 </h1>
+	<img src="transistor.png" alt="Modelo 1">
+	<h1> Cenário 2</h1>
+	<img src="transistor.png" alt="Modelo 2">	
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
