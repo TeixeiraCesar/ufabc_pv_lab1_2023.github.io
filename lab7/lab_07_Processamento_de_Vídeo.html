@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>Lab 7</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #008000;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Lab 07</h3>
+</header>
+
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h1><center> Lab 07</center></h1>
+    <h2><center>Objetivo</center></h2>
+    <p><center>A detecção de objetos em vídeo é uma tarefa crucial na visão computacional, e o Cascade Classifier oferece uma abordagem eficiente e rápida para esse propósito. Proposto por Viola e Jones em 2001, esse método utiliza uma sequência hierárquica de classificadores baseados em aprendizado de máquina para detectar objetos específicos. Ao aplicar cada classificador a uma região de interesse, o sistema descarta rapidamente as regiões que não correspondem ao objeto, economizando recursos computacionais. Essa técnica é amplamente utilizada em aplicações de tempo real, como vigilância por vídeo e rastreamento de objetos em movimento. Embora tenha suas vantagens, é importante reconhecer as limitações do Cascade Classifier em lidar com variações de escala e orientação em alguns cenários.</center></p>
+	<h2><center>Metodologia</center></h2>
+	<p><center>O Cascade Classifier é uma técnica de detecção de objetos que utiliza uma sequência hierárquica de classificadores baseados em aprendizado de máquina, como o algoritmo AdaBoost, para detectar objetos específicos em imagens ou vídeos. Essa abordagem é eficiente, pois descarta rapidamente regiões que não correspondem ao objeto de interesse, economizando recursos computacionais. É amplamente usado em aplicações de tempo real, como vigilância por vídeo e rastreamento de objetos em movimento..</center></p>
+
+<br>
+        <h3><center>Parte 1 - Detecando objetos em imagens pre-recebidas</center></h3>
+		<h3><center>Passos</center></h3>
+		<center><li>O programa para realizar a detecção de objetos e apresentar na tela. Obs.: escolhemos cores contrastantes na identificação.</center></li>
+		<center><li>Mova versão do programa, uma versão com modelos XML Haarcascade dos exercícios acima, e outra versão com modelo XML Haarcascade.</center></li>
+		<center><li>O programa também deve salvar as imagens com identificação dos Objetos, ao toque de uma tecla.</center></li>
+		
+		
+		<h3><center>Parte 2 - Replicando os features de detecção em video</center></h3>
+		<h3><center>Passos</center></h3>
+		<center><li>Replicamos o programa da parte 1 para utilizar as imagens da webcam.</center></li>
+
+		
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
