@@ -104,10 +104,16 @@ footer {
 		<h3><center>Parte 2 - Imagem Cinza e Histograma</center></h3>
         <p><center>Na parte 2 ao invés de realizar o processo numa imagem prévia - usamos a webcam para capturar os videos em tempo real, tanto cinza quanto equalizado.</center></p>
         <h5><center>Cesar</center></h5>  
-		<h5><center>Video Cinza</center></h5>  
-        <p><center><img src="parte2/cesar_video_cinza.webm" alt="V-Cinza"></center></p>
-		<h5><center>Video Equalizado</center></h5>  
-		<p><center><img src="parte2/cesar_video_equalizada.webm" alt="V-Cinza-Eq"></center></p>
+		<h5><center>Video Cinza</center></h5>
+		<center><video width="400" height="400" controls="controls" autoplay="autoplay">
+		<source src="parte2/cesar_video_cinza.mp4" type="video/mp4">
+		</object>
+		</center></video>
+		<h5><center>Video Equalizado</center></h5>
+		<center><video width="400" height="400" controls="controls" autoplay="autoplay">
+		<source src="parte2/cesar_video_equalizada.mp4" type="video/mp4">
+		</object>
+		</center></video>
 		
 		<h3><center>Parte 3 - 	Binarização e Limiarização</center></h3>
 		<p><center>O processo de binarização e limiarização de imagens envolve converter uma imagem em preto e branco, atribuindo um valor de limiar para separar os pixels em duas classes: uma acima do limiar, que se torna branco, e outra abaixo do limiar, que se torna preta.</center></p> 
@@ -139,7 +145,12 @@ footer {
         <br>
 		
 		<h2><center>Conclusões</center></h2>
-		<p><center>A equalização nas cores é uma técnica eficaz para melhorar o contraste e a distribuição das cores em uma imagem. Ao aplicar a equalização do histograma em cada canal de cor separadamente, é possível realçar detalhes e obter uma representação mais equilibrada e vívida das cores. Essa abordagem é útil para melhorar a qualidade visual de imagens com problemas de contraste ou distribuição de cores desbalanceada. A equalização nas cores pode ser uma etapa importante no processamento de imagens para obter resultados mais satisfatórios em termos de visualização e análise das cores presentes na imagem.</center></h2>
+		<p><center>Os experimentos realizados neste estudo proporcionaram uma compreensão mais profunda das técnicas de processamento de imagem, especificamente, a equalização de histograma e binarização, bem como a aplicação dessas técnicas em imagens individuais e em tempo real a partir da webcam. Além disso, investigamos a equalização nas cores, que é uma abordagem mais complexa para melhorar o contraste e a qualidade visual de uma imagem colorida.
+		No primeiro experimento, o método mais simples de equalização de histograma foi implementado com sucesso para converter as imagens individuais em tons de cinza e melhorar a distribuição de intensidade dos pixels. A utilização das bibliotecas OpenCV e Matplotlib permitiu a visualização e análise dos resultados obtidos.
+		No segundo experimento, estendemos o programa para adquirir imagens em tempo real da webcam, demonstrando a aplicabilidade das técnicas de equalização em cenários dinâmicos. A visualização ao vivo da imagem cinza e da imagem equalizada proporcionou uma compreensão imediata dos efeitos da equalização no processamento em tempo real.
+		No terceiro experimento, o estudo da binarização demonstrou a importância do processo de limiarização para segmentar objetos de interesse em uma imagem. O método simple foi utilizado para converter os níveis de intensidade em valores binários, destacando objetos específicos em um cenário.
+		Por fim, no quarto experimento, a equalização nas cores foi explorada, permitindo melhorar o contraste e a distribuição de intensidade em cada canal de cor separadamente. Ao combinar os canais equalizados, produzimos uma imagem colorida com melhor qualidade visual, destacando os detalhes e cores presentes na cena.
+		Concluímos que as técnicas de equalização de histograma e binarização são poderosas ferramentas para processamento de imagens, sendo aplicáveis em diversos cenários. Além disso, a extensão dessas técnicas para imagens coloridas permite melhorar a qualidade visual das mesmas, revelando detalhes e cores anteriormente ocultos. Os resultados obtidos fornecem uma base sólida para futuras pesquisas e aplicações em diversas áreas, como visão computacional, reconhecimento de padrões, e análise de imagens e a equalização nas cores é uma técnica eficaz para melhorar o contraste e a distribuição das cores em uma imagem. Ao aplicar a equalização do histograma em cada canal de cor separadamente, é possível realçar detalhes e obter uma representação mais equilibrada e vívida das cores. Essa abordagem é útil para melhorar a qualidade visual de imagens com problemas de contraste ou distribuição de cores desbalanceada. A equalização nas cores pode ser uma etapa importante no processamento de imagens para obter resultados mais satisfatórios em termos de visualização e análise das cores presentes na imagem.</center></h2>
 				
   </article>
 </section>
