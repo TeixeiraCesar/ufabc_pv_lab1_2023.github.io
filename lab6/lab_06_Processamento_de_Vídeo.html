@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>Lab 6</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #008000;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Lab 06</h3>
+</header>
+
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h1><center> Lab 06</center></h1>
+    <h2><center>Objetivo</center></h2>
+    <p><center>Este relatório tem como objetivo estudar e descrever as metodologias de detecção e rastreamento de pontos de interesse são fundamentais em várias aplicações de visão computacional e processamento de imagens. Entre as abordagens mais notáveis estão o "Harris Corner Detection", que identifica cantos em uma imagem com base na variação da intensidade local, e o "Shi-Tomasi Corner Detector & Good Features to Track", que aprimora o Harris ao considerar a qualidade dos pontos identificados. Além disso, temos o "Scale-Invariant Feature Transform (SIFT)", uma técnica poderosa que extrai pontos de interesse invariantes à escala e rotação, sendo amplamente utilizado em tarefas como correspondência de imagens e reconstrução 3D. Cada uma dessas metodologias desempenha um papel importante no avanço da análise de imagens e reconhecimento de padrões.</center></p>
+	<h2><center>Metodologia</center></h2>
+	<p><center>Utilizar o OpenCV com a webcam disponibilizada em sala. Os metodos de processamento utilizados foram:.</center></p>
+	<center><li>Harris Corner Detection</li></center>
+	<center><li>Shi-Tomasi Corner Detector & Good Features to Track</li></center>
+	<center><li>Scale-Invariant Feature Transform - SIFT</li></center>
+<br>
+        <h3><center>Parte 1 - Testando as Features de detecção</center></h3>
+		<p><center> Para a parte 1 foram utilizadas imagens prévias para realizar a validação dos métodos de detecção - além de imagens "aleatórias" para validar outros aspectos dos métodos.</center></p>
+		<p><center> Para conseguir comparar os métodos usamos dois tipos de imagens - reta e com cores fortes</center></p>
+		<h4><center>Imagens Cesar - Referência reta</center></h4>
+	    <div class="image123"><center>
+		<img src="ArquivosCesar/imagem_reta.png" /height="400" width="400">
+		<img src="ArquivosCesar/imagem_reta_Harris.png"/ height="400" width="400">
+		<img src="ArquivosCesar/imagem_reta_Shi.png"/ height="400" width="400">
+		<img src="ArquivosCesar/imagem_reta_shift.jpg"/ height="400" width="400">
+		</center></div>
+		<h4><center>Imagens Cesar - Referência "Linha aleatória"</center></h4>
+	    <div class="image123"><center>
+		<img src="ArquivosCesar/Webcam_Lab3_normal.png" /height="400" width="400">
+		<img src="ArquivosCesar/Harris Corner Detection.png"/ height="400" width="400">
+		<img src="ArquivosCesar/Shi-Tomasi Corner Detector _ Good Features to Track.png"/ height="400" width="400">
+		<img src="ArquivosCesar/sift_keypoints_NaoReta.jpg"/ height="400" width="400">
+		</center></div>
+		<h4><center>Descrição - Da esquerda para direita:</center></h4>
+		<center><li>Imagem Normal</li></center>
+		<center><li>Harris Corner Detection</li></center>
+		<center><li>Shi-Tomasi Corner Detector & Good Features to Track</li></center>
+		<center><li>Scale-Invariant Feature Transform - SIFT</li></center>
+		<h4><center>Imagens Selecionadas Gabriel - Floresta(Poucas cores e linhas aleatórias)</center></h4>
+	    <div class="image123"><center>
+		<img src="ArquivosGabriel/floresta.png" /height="400" width="400">
+		<img src="ArquivosGabriel/floresta-6b.png"/ height="400" width="400">
+		</center></div>
+		<h4><center>Descrição - Da esquerda para direita:</center></h4>
+		<center><li>Harris Corner Detection</li></center>
+		<center><li>Shi-Tomasi Corner Detector & Good Features to Track</li></center>
+		<h4><center>Imagens Selecionadas Gabriel - Tabuleiro(Poucas cores e linhas retas)</center></h4>
+	    <div class="image123"><center>
+		<img src="ArquivosGabriel/tabuleiroxadrez.png" /height="400" width="400">
+		<img src="ArquivosGabriel/tabuleiro-xadrez-6a.png"/ height="400" width="400">
+		</center></div>
+		<h4><center>Descrição - Da esquerda para direita:</center></h4>
+		<center><li>Harris Corner Detection</li></center>
+		<center><li>Shi-Tomasi Corner Detector & Good Features to Track</li></center>
+		<h4><center>Imagens Selecionadas Gabriel - Quadro Van Gogh(Muitas cores e poucas formas)</center></h4>
+	    <div class="image123"><center>
+		<img src="ArquivosGabriel/vangogh.png" /height="400" width="400">
+		<img src="ArquivosGabriel/vangogh-6b.png"/ height="400" width="400">
+		<img src="ArquivosGabriel/Gabrielsift_keypoints.jpg"/ height="400" width="400">
+		</center></div>
+		<h4><center>Descrição - Da esquerda para direita:</center></h4>
+		<center><li>Harris Corner Detection</li></center>
+		<center><li>Shi-Tomasi Corner Detector & Good Features to Track</li></center>
+		<h2><center>Conclusões - Parte 1</center></h2>
+		<p><center>O método Harris-Corner se mostrou bastante eficiente quando lidando com cores que não apresentavam diferenças muito discrepantes. Apesar disso, é importante ressaltar que, mesmo sendo o mais eficaz entre os métodos testados, os resultados ainda não atingiram um patamar considerado excelente. Isso significa que há espaço para melhorias e desenvolvimento de novas abordagens para lidar com imagens com essas características específicas.
+		Um ponto interessante a se destacar é que, embora o Harris-Corner tenha obtido sucesso em situações onde a diferença de cores não era muito acentuada, ele enfrentou dificuldades ao lidar com imagens mais complexas, especialmente aquelas que não possuíam muitas linhas retas ou estruturas geométricas bem definidas. Esse aspecto ressalta a importância de buscar soluções mais abrangentes que possam capturar nuances em imagens com maior riqueza de detalhes e complexidade.
+		Nesse contexto, a busca por técnicas mais avançadas e robustas para o processamento de imagens e a visão computacional se torna uma tarefa crucial. É fundamental investir em pesquisa e inovação para encontrar abordagens que sejam capazes de lidar eficientemente com esses desafios. A exploração de algoritmos de aprendizado de máquina e redes neurais convolucionais pode ser uma direção promissora, pois eles têm demonstrado capacidade de extrair informações significativas de imagens complexas.
+		Outro fator relevante é considerar a utilização de informações contextuais e técnicas de segmentação de imagem para auxiliar no processo de identificação e localização de pontos de interesse em imagens menos "lineares". Essa abordagem pode ajudar a melhorar a precisão e a capacidade de generalização dos métodos, permitindo que eles sejam mais robustos diante de diversas situações.
+		Em resumo, embora o método Harris-Corner tenha sido o que apresentou melhores resultados para cores pouco discrepantes, ainda há um longo caminho a percorrer para enfrentar os desafios impostos por imagens complexas e não tão "lineares". O progresso nesse campo exigirá uma abordagem multidisciplinar, com contribuições da matemática, processamento de sinais, inteligência artificial e outras áreas relacionadas, com o objetivo de aprimorar a capacidade dos sistemas de visão computacional em lidar com a diversidade e complexidade do mundo visual.
+		</center></h2>
+		<h3><center>Parte 2 - Replicando os features de detecção em video</center></h3>
+		<p><center> Para a parte 2 foram utilizadas videos em tempo real para aplicar os métodos de detecção.</center></p>
+		<h1><center>Videos Cesar</center></h1>
+		<h3><center>Video 1</center></h3>
+		<center><video width="400" height="400" controls="controls" autoplay="autoplay">
+		<source src="ArquivosCesar/Harris.mp4" type="video/mp4">
+		</object>
+		</center></video>
+		<h3><center>Video 2</center></h3>
+		<center><video width="400" height="400" controls="controls" autoplay="autoplay">
+		<source src="ArquivosCesar/Sift-Video.mp4" type="video/mp4">
+		</object>
+		</center></video>
+		<h3><center>Video 3</center></h3>
+		<center><video width="400" height="400" controls="controls" autoplay="autoplay">
+		<source src="ArquivosCesar/Shi-Video.mp4" type="video/mp4">
+		</object>
+		</center></video>
+		
+		<h1><center>Videos Gabriel</center></h1>
+		<h3><center>Video 1</center></h3>
+		<center><video width="400" height="400" controls="controls" autoplay="autoplay">
+		<source src="ArquivosGabriel/gabriel-harris.mp4" type="video/mp4">
+		</object>
+		</center></video>
+		<h3><center>Video 2</center></h3>
+		<center><video width="400" height="400" controls="controls" autoplay="autoplay">
+		<source src="ArquivosGabriel/gabriel-shi.mp4" type="video/mp4">
+		</object>
+		</center></video>
+		<h3><center>Video 3</center></h3>
+		<center><video width="400" height="400" controls="controls" autoplay="autoplay">
+		<source src="ArquivosGabriel/gabriel-sift.mp4" type="video/mp4">
+		</object>
+		</center></video>
+
+		<h2><center>Conclusões - Parte 2</center></h2>
+		<p><center>
+		Na detecção de imagens em vídeos, o método Harris-Corner mostrou-se eficiente quando lidando com cores pouco discrepantes. No entanto, é importante ressaltar que os resultados obtidos não foram considerados excelentes, evidenciando a necessidade de aprimorar as abordagens nesse contexto específico. Esse cenário é especialmente desafiador para imagens de vídeo, pois o fluxo contínuo de frames requer métodos capazes de processar informações em tempo real.
+		O Harris-Corner enfrentou dificuldades ao lidar com vídeos contendo imagens menos "lineares" ou com menos estruturas geométricas bem definidas. Essa limitação pode impactar a precisão e robustez do sistema em situações onde a presença de retas e formas é menos evidente. Por isso, a busca por técnicas mais avançadas, como algoritmos de aprendizado de máquina e redes neurais convolucionais, pode ser uma estratégia promissora para lidar com a complexidade e a dinamicidade dos vídeos.
+		Além disso, é fundamental considerar a utilização de informações contextuais e técnicas de segmentação de imagem para aprimorar a detecção em vídeos. Essa abordagem pode permitir uma melhor identificação e localização de pontos de interesse, tornando o método mais eficaz diante de sequências de imagens. A pesquisa e inovação contínua serão essenciais para enfrentar esses desafios e avançar no campo da detecção de imagens em vídeos, possibilitando aplicações em tempo real e com alto grau de precisão.</center></p>
+		<h1><center>Conclusões do Relatório</center></h1>
+		<p><center>
+		Em conclusão, ao explorar técnicas de detecção de vídeo e imagem, fica evidente que nenhum método apresentou resultados excelentes para cores pouco discrepantes ou imagens menos "lineares". A detecção em vídeos requer abordagens capazes de lidar com a dinamicidade e fluxo contínuo de frames, enquanto a detecção em imagens demanda soluções mais robustas para lidar com nuances complexas.
+		Nesse contexto, o método Harris-Corner destacou-se como eficiente para cores pouco discrepantes, mas ainda enfrentou dificuldades em situações mais desafiadoras. A busca por soluções mais avançadas, como algoritmos de aprendizado de máquina e técnicas de segmentação de imagem, emerge como uma promissora direção para aprimorar a precisão e eficácia nesses dois cenários.
+		A investigação contínua e o desenvolvimento de abordagens mais sofisticadas e multidisciplinares são fundamentais para alcançar avanços significativos na detecção de vídeo e imagem, impulsionando aplicações em tempo real e melhorando a compreensão e interação com o mundo visual. </center></p>
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
