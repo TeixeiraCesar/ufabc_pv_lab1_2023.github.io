@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #008000;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head> #cabeçalho
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Lab 05</h3>
+</header>
+
+<section>
+  <nav> <!--Aba Lateral com Links para arquivos pessoais de membros da tarefa individual.-->
+    <h4><center>Membros do grupo</center></h4>
+    <ul><center>
+      <li><a href="../UFABC_PV_LAB1-main/Videos e eu/index.html" target="_blank">César Augusto Brilhante Teixeira</a></li>
+	  <li><a href="../UFABC_PV_LAB1-main/Videos e Eu/Gabriel Silva Cajueiro de Campos_11018515.html" target="_blank">Gabriel Silva Cajueiro de Campos</a></li>
+	  <li><a href="../Videos e Eu/eu_sou_mayara_triveloni/eu_sou_mayara_triveloni.html">Mayara Maria Triveloni</a></li>
+    </center></ul>
+    <h4><center>Relatórios</center></h4>
+      <ul><center>
+        <li><a href="../index.html" target ="_blank">Lab 1</a></li>
+        <li><a href="../lab2/lab_02_Processamento_de_Vídeo.html" target ="_blank">Lab 2</a></li>
+        <li><a href="../lab3/lab_03_Processamento_de_Vídeo.html">Lab 3</a></li>
+        <li><a href="../lab4/lab_04_Processamento_de_Vídeo.html">Lab 4</a></li>
+		    <li><a href="../lab5/lab_05_Processamento_de_Vídeo.html">Lab 5</a></li>
+        <li><a href="../lab6/lab_06_Processamento_de_Vídeo.html">Lab 6</a></li>
+        <li><a href="../lab7/lab_07_Processamento_de_Vídeo.html">Lab 7</a></li>
+        <li><a href="../lab8/lab_08_Processamento_de_Vídeo.html">Lab 8</a></li>
+        
+	  </center></ul>
+  </nav>
+  
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h2><center>Objetivo</center></h2>
+    <p><center>O Laboratório 05, realizado pelos integrantes César Augusto Brilhante Teixeira, Gabriel Silva Cajueiro de Campos e Mayara Maria Triveloni tem por objetivo a aplicação prática dos conceitos de Subtração de Fundo e Detecção de Movimento.</center></p>
+<p><center>Para a realização deste laboratório, foi utilizado o Notepad++ configurado em linguagem HTML para a criação do código da disciplina as imagens geradas pela equipe no laboratório 5 relacionado aos vídeos gravados com objetos e integrantes do grupo. O procedimento do laboratório será a aplicação dos códigos de Subtração de Fundo com métodos diferentes para a detecção de movimento como, por exemplo, subtração frame-a-frame e subtração da referência.</center></p>
+<p><center>Em seguida, para cada um dos capítulos posteriores, haverá uma explicação do método utilizado, bem como o entendimento prático das alterações no mesmo.</center></p>
+<p><center>Mas em resumo, são diversas as áreas o qual a detecção de movimentos pode ser aplicada como, detecção de anomalia, rastreamento, automação e muitas outras aplicações. Portanto, esse processo de identificação e rastreamento de mudanças na posição de objetos em um vídeo ou sequência de imagens é muito importante para variadas áreas.</center></p>
+<br>
+<br>
+	  <h2><center>Subtração de Fundo</center></h2>
+    <h2><center>+</center></h2>
+    <h2><center>Detecção de Movimento</center></h2>
+    <br>
+	  		<p><center>Para a realização da <b>subtração de plano de fundo</b>, alguns métodos podem ser aplicados. De modo geral, a primeira etapa consiste no cálculo de um modelo inicial de Background. Este cálculo é baseado na subtração entre o quadro atual e a parte estática da cena (ou simplesmente o que pode ser considerado o fundo, dada as características recebidas).</center></p>
+        <p><center>Por sua vez, na segunda etapa, atualiza-se o modelo de acordo com as mudanças que ocorreram na cena.</center></p>
+        <p><center>Para gerar a máscara de subtração do plano, foi utilizada a função <i>cv.createBackgroundSubtractorMOG2()</i> como é possível observar no código apresentado na sequência.</center></p>
+        <p><center><img src="codigos/codigo_captura.png" alt="Codigo"></center></p>
+        
+        <p><center>Os vídeos de entrada foram gravadas em práticas anteriores e os resultados obtidos podem ser observados nos a seguir:</center></p>
+        <br>
+        <h2><center>Subtração de Fundo: Objetos e Integrantes (movimentos lentos e rápidos)</center></h2>
+        <br>  
+        <center>
+          <i>É importante ressaltar, que devido a aplicação das máscaras, houve dificuldade na gravação do vídeo no formato .avi (ao salvar o resultado obtido, diretamente no código, o arquivo corrompia)</i>
+          <br>
+          <br>
+          <video src="5a/lento_pessoa_lab5a.mp4" width="482" controls></video>
+          <br>
+          <br>
+          <video src="5a/objeto_lento_lab5a.mp4" width="482" controls></video>
+          <br>
+          <br>
+          <video src="5a/objeto_rapido_lab5a.mp4" width="482" controls></video>
+          <br>
+          <p>Apesar da subtração do fundo não ter 100% de êxito, é possível confimar que o resultado atendeu o objetivo da prática, com a possibilidade de visualizar os objetos (a caneta e a chave do carro) ou o movimento do braço no vídeo gravado pelo integrante do grupo.</p>
+          <br>
+          <br>
+        </center>
+
+        <h2><center>Diferença entre duas imagens: subtração frame-a-frame</center></h2>
+        <br>  
+        <p><center>Como o próprio nome da técnica aplicada sugere, busca-se encontrar a diferença entre dois quadros, ou seja, alguma detecção de movimento possível, ao aplicar a função <i>cv2.absdiff()</i>.</center></p>
+        <p><center>Antes de encontrar os contornos com a função <i>cv2.findContours()</i> e desenhá-los (colocar o retângulo no movimento detectado na imagem), a diferença da imagem é suavizada e convertida para binário, após ter sua escala convertida para cinza. </center></p>
+        <p><center>- <i>cv2.absdiff()</i> = função utilizada para encontrar a diferença entre dois quadros;</center></p>
+        <p><center>- <i>cv2.GaussianBlur()</i> = função utilizada para suavizar a imagem desejada;</center></p>
+        <p><center>- <i>cv2.threshold()</i> = função utilizada para converter a imagem em uma imagem binária;</center></p>
+        <p><center>- <i>cv2.threshold()</i> = função utilizada para encontrar os contornos;</center></p>
+        <p><center>- <i>cv2.drawContours()</i> = função utilizada para desenhar os contornos e, caso o contorno desejado seja retangular utilizar também a função <i>cv2.boundingRect();</i></center></p>
+        <p><center>O código pode ser analisado a seguir:</center></p>
+        <p><center><img src="codigos/codigo_captura_1.png" alt="Codigo"></center></p>
+        <br>
+
+        <center>
+          <p>Seguem os resultados obtidos com a aplicação da técnica em vídeos gravados anteriormente.</p>
+          <br>
+          <br>
+          <video src="5b/lento_pessoa_5b.mp4" width="482" controls></video>
+          <br>
+          <p>Para esse vídeo, é possível analisar que foi possível detectar o movimento do braço do integrante do grupo se movendo, com vários retângulos sendo desenhados ao mesmo tempo. Ao fundo do vídeo, os movimentos realizados por outros alunos não são identificados/detectados com a aplicação do código.</p>
+          <br>
+          <br>
+          <video src="5b/objeto_lento_5b.mp4" width="482" controls></video>
+          <br>
+          <p>Para o vídeo acima, o modelo detecta corretamente o movimento da caneta e chave do carro. Entretanto, são desenhados também, retângulos no chão. Isso talvez seja resultado da iluminação durante a gravação do vídeo e sombra gerada no piso da sala</p>
+          <br>
+          <br>
+          <video src="5b/objeto_rapido_5b.mp4" width="482" controls></video>
+          <br>
+          <p>A mesma situação relatada anteriormente, pode ser observada neste novo vídeo realizado apenas com o movimento da caneta.</p>
+          <br>
+          <br>
+        </center>
+
+        <h2><center>Diferença da imagem de referência (foreground mask)</center></h2>
+        
+        <center>
+          <p>Outro fator importante que ainda não foi comentado, é o uso de operações morfológicas objetivando reduzir o ruído e preencher as lacunas, como erosão e dilatação (<i>cv2.erode() e cv2.dilate()</i>).
+
+          </p>
+          <p>Seguem os resultados obtidos com a aplicação da técnica em vídeos gravados anteriormente.</p>
+          <br>
+          <br>
+          <video src="5c/lento_pessoa_5c.mp4" width="482" controls></video>
+          <p>Diferentemente do resultado obtido com a técnica anterior, é detectado o movimento do braço do integrante do grupo e a movimentação do aluno ao fundo do vídeo.</p>
+          <br>
+          <br>
+          <video src="5c/objeto_lento_5c.mp4" width="482" controls></video>
+          <br>
+          <br>
+          <video src="5c/objeto_rapido_5c.mp4" width="482" controls></video>
+          <p>Para os dois outros vídeos utilizados, o resultado não foi tão satisfatório para detecção.</p>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <p>No vídeo a seguir, com a Webcam a detecção de movimentos foi realizada e os resultados foram exatamente de acordo com o esperado e desejado, dada as circustâncias e métodos explicados anteriormente. No caso, as condições do ambiente eram ideias, assim como os parâmetros utilizados.</p>
+          <video src="mayara-video.mp4" width="482" controls></video>
+          <br>
+          <br>
+          <hr>
+        </center>
+				
+	  <center>
+	
+        <p>Durante toda a prática, foi possível aplicar e identificar o resultado das técnicas utilizadas para a detecção de movimento e subtração de fundo das imagens/gravações. Entretanto, devido a fatores do ambiente e especificação 'incorreta' de alguns parâmetros necessários, o efeito pode não ser 100% o esperado.</p>
+        <p>Por isso, durante o laboratório testamos diferentes valores de limite para obter a sensibilidade ideal para cada vídeo (objeto e integrante), visto que se for muito baixo haverá a possibilidade da captura de ruídos indesejados e, do mesmo modo, caso a escolha seja muito alta é possível perder movimentos sutis.</p>
+        <p>Identificamos também, o efeito da sombra e iluminação durante a detecção, visto que para para os vídeos utilizados, a detecção foi afetada (como descrevemos anteriormente na análise do experimento). Uma alternativa que poderia ser feita, seria a aplicação de algumas técnicas de pré-processamento, para uma tentativa de melhora no resultado.</p>    
+    </center>
+        <br>
+        <hr>
+        <br>
+			
+				
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
