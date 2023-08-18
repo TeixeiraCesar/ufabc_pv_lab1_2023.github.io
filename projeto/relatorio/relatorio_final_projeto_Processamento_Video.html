@@ -72,12 +72,12 @@ footer {
 
 <section>
 <article>
-    <h2><center>Introdução</center></h2>
-    <p><center>O nosso projeto teve como objetivo criar um sistema para identificar problemas em transistores, especialmente aqueles relacionados a partes físicas, como terminais faltando ou danificados. Além disso, nós também comparamos o nosso sistema com aqueles usados nas indústrias para detectar falhas em componentes eletrônicos SMDs, que são aqueles que ficam diretamente na placa de circuito.
+    <h2><center>1. Introdução</center></h2>
+    <p>O nosso projeto teve como objetivo criar um sistema para identificar problemas em transistores, especialmente aqueles relacionados a partes físicas, como terminais faltando ou danificados. Além disso, nós também comparamos o nosso sistema com aqueles usados nas indústrias para detectar falhas em componentes eletrônicos SMDs, que são aqueles que ficam diretamente na placa de circuito.
 	No decorrer do projeto, nós utilizamos diferentes técnicas para identificar essas falhas e analisamos vários fatores que podem influenciar o processo de detecção. Por exemplo, nós estudamos como a iluminação afeta as imagens, como pequenas variações no tempo de processamento do software podem interferir e como garantir que tudo esteja sincronizado corretamente. Também levamos em consideração as especificações da câmera que usamos, como a qualidade da imagem que ela produz, quantas imagens ela captura por segundo e como ela lida com diferentes condições de iluminação.
 	A nossa intenção foi combinar todas essas diferentes peças do quebra-cabeça para criar um sistema que fosse eficaz na detecção de falhas em transistores. Ao compararmos o nosso sistema com aqueles que já são usados na indústria, pudemos ter uma noção de como estamos nos saindo em relação a soluções estabelecidas.
 	</p>
-	<h2><center> Metodologia </center></h2>	
+	<h2><center>2.Metodologia </center></h2>	
 	<div div style = text-align:left>
 	<p>Este projeto desenvolveu um sistema de detecção de problemas físicos em transistores, explorando técnicas como filtros de cores e detecção de Regiões de Interesse (ROI). A eficácia do sistema foi avaliada em comparação com soluções industriais, revelando um avanço promissor na detecção de falhas. Podemos discorrer as metodologias como:
 	</p>
@@ -85,39 +85,100 @@ footer {
 	<li><b>Exploração de Técnicas:</b>Investigamos diversas técnicas, incluindo filtros de cores e detecção de Regiões de Interesse (ROI), para identificar falhas nos transistores. Analisamos fatores como iluminação, processamento de imagem e sincronização.</li>
 	<li><b>Integração das Peças:</b>Integrando técnicas de detecção e processamento de imagem, desenvolvemos um sistema eficaz para identificar problemas em transistores, incluindo a criação de ROI para análise mais precisa.</li>
 	</div>
-	<h2><center>Materiais</center></h2>
-	<h3>Disco de Prova</h3>
-	<img src="materiais/Transistor.jpeg" height="400" width="400">
-	<p>Placa de acrilico com impressão de transistores - utilizado para simular transistores sem defeito, um com terminal faltante e um terminal danificado</p>
-	<h3>Transistores Sem-Defeito</h3>
-	<div class="image123">
-		<img src="materiais/Transistor2.jpeg" height="400" width="400">
-		<img src="materiais/Transistor3.jpeg" height="400" width="400">
-	</div>
-	<h3>Transistores Com-Defeito</h3>
-	<p>O da direita representa o terminal danificado e o da esquerda com terminal faltante</p>
-	<div class="image123">
-		<img src="materiais/Transistor4.jpeg" height="400" width="400">
-		<img src="materiais/Transistor5.jpeg" height="400" width="400">
-	</div>
-	<h3>Base de Apoio para Camera</h3>
+	<h2><center>3.Materiais</center></h2>
+	<p>Lista de materiais usados no projeto</p>
+	<h3>3.1 Disco de Prova</h3>
+	<p>Placa de acrilico com impressão de simulacros de transistores BJT - utilizado para simular 2 transistores sem defeito, um com terminal faltante e um terminal danificado</p>
+	<center><img src="materiais/Transistor.jpeg" height="400" width="400"></center>
+	<div class="image123"><center>
+		<h3> Transistores Sem-Defeito </h3>
+		<img src="materiais/Transistor2.jpeg" height="100" width="100">
+		<img src="materiais/Transistor3.jpeg" height="100" width="100">
+		<h3> Transistores Com-Defeito</h3>
+		<img src="materiais/Transistor4.jpeg" height="100" width="100">
+		<img src="materiais/Transistor5.jpeg" height="100" width="100">
+		<p>O da direita representa o terminal danificado e o da esquerda com terminal faltante</p>
+	</center></div>
+	<h3>3.2 Base de Apoio para Camera</h3>
 	<p>Aluminio usinado para poder anexar a camera - a industrial através de parafusos ou a webcam pelo suporte que vem na mesma</p>
-	<img src="materiais/base.jpeg" height="400" width="400">
-	<h3>Modelo Funcional</h3>
-	<img src="modelo.png" height="400" width="800">
+	<center><img src="materiais/base.jpeg" height="400" width="400"></center>
+	<h3>3.3 Modelo Funcional</h3>
+	<center><img src="modelo.png" height="400" width="1000"></center>
+	<h2><center>4.Software e Técnicas de Aquisição</center></h2>
+	<p>Para este projeto foi desenvolvido um script desenvolvido em Python utilizando a biblioteca OpenCV, que tem como objetivo realizar a análise de uma imagem contendo componentes eletrônicos com base em suas cores. O script executa diversas etapas de processamento de imagem, incluindo segmentação por cor, detecção de contornos e visualização dos resultados. O foco principal do script é identificar conectores eletrônicos azuis em uma imagem e determinar se estão presentes em quantidade suficiente.
+	</p>
+	<h4>Segue abaixo os passos do Processamento:</h4>
+	<h5>4.1 Importação das Bibliotecas:</h5>
+	<div div style = text-align:left>
+	<p>O script começa importando as bibliotecas necessárias, OpenCV (cv2) e NumPy.</p>
+	</div>
+	<h5> 4.2 Carregamento e Pré-Processamento</h5>
+	<div div style = text-align:left>
+	<p>A imagem é carregada a partir do caminho especificado.</p>
+	<p>Verifica-se se a imagem foi carregada com sucesso e o script é encerrado em caso contrário.</p>
+	<p>A imagem carregada é redimensionada para uma dimensão menor (800x600) usando a função cv2.resize().</p>
+	<p>A imagem redimensionada é convertida do espaço de cores BGR para o espaço de cores HSV usando cv2.cvtColor().</p>
+	</div>
+	<h5> 4.3 Segmentação por Cor</h5>
+	<div div style = text-align:left>
+	<p>São definidos intervalos de valores no espaço de cores HSV para as cores azul e preta</p>
+	<p>Máscaras são criadas usando 'cv2.inRange()' para segmentar objetos azuis e pretos na imagem HSV</p>
+	</div>
+	<h5> 4.4 Combinação das Máscaras</h5>
+	<div div style = text-align:left>
+	<p>As máscaras de objetos azuis e pretos são combinadas usando a operação lógica OR.</p>
+	</div>
+	<h5> 4.5 Redução de Ruído</h5>
+	<div div style = text-align:left>
+	<p>É aplicada uma abertura morfológica à máscara combinada usando cv2.morphologyEx() para remover ruídos e artefatos pequenos.</p>
+	</div>
+	<h5> 4.6 Detecção de Cotornos</h5>
+	<div div style = text-align:left>
+	<p>Contornos são detectados na máscara limpa usando cv2.findContours().</p>
+	<p>Um loop itera pelos contornos detectados e filtra-os com base no tamanho da área.</p>
+	<p>É determinada uma caixa delimitadora que engloba todos os objetos azuis.</p>
+	</div>
+	<h5> 4.7 Sub-Região e Interesse(Sub-ROI)</h5>
+	<div div style = text-align:left>
+	<p>Com base na caixa delimitadora, é definida uma sub-região de interesse (sub-ROI) na parte inferior da ROI principal.</p>
+	<p>A sub-ROI é extraída do quadro redimensionado.</P>
+	</div>
+	<h5> 4.8 Segmentação por Cor e Análise na Sub-ROI</h5>
+	<div div style = text-align:left>
+	<p>A sub-ROI é convertida para o espaço de cores HSV.</p>
+	<p>A segmentação por cor é novamente aplicada à sub-ROI usando o intervalo de cores azuis definido.</p>
+	<p>Uma abertura morfológica é realizada na máscara da sub-ROI.</p>
+	<p>São detectados contornos de objetos azuis na sub-ROI.</p>
+	</div>
+	<h5> 4.9 Combinação das Máscaras</h5>
+	<div div style = text-align:left>
+	<p>Os contornos dos objetos azuis detectados na sub-ROI são desenhados em vermelho na imagem da sub-ROI.</p>
+	<p>O script determina se há exatamente 5 objetos azuis detectados na sub-ROI.</p>
+	<p>Uma mensagem de resultado ("Passou" ou "Reprovado") é determinada com base na quantidade de objetos azuis detectados.</p>
+	<p>O contorno da ROI principal é desenhado no quadro redimensionado.</p>
+	<p>O número de conectores azuis corretamente detectados na sub-ROI e a mensagem de resultado são escritos no quadro redimensionado.</p>
+	<p>O quadro redimensionado com contornos desenhados e ROIs é exibido usando cv2.imshow().</p>
+	</div>
+	<h5> 4.10 Combinação das Máscaras</h5>
+	<div div style = text-align:left>
+	<p>O script aguarda pressionamento de uma tecla usando cv2.waitKey(0) para manter a imagem exibida aberta.</p>
+	<p>Após a pressionamento de uma tecla, as janelas são fechadas usando cv2.destroyAllWindows()</p>
+	</div>
 	
-	<h2><center>Resultados</center></h2>
+	<a href="url" download="Detecção-Validada.py">Baixe o Código</a>
+	
+	<h2><center>5. Desafios</center></h2>
 	<p>Abaixo temos listados os desafios e resultados do sistema</p>
-	<h3><center>Desafio do Jitter</center></h3>
+	<h3>5.1 Desafio do Jitter</h3>
 	<p>Observamos que o problema do jitter foi notavelmente ampliado pelo tempo de exposição da câmera, como ilustrado na imagem abaixo:</p>
-	<div class="image123">
+	<center><div class="image123">
 		<img src="10ms_exposição.png" height="400" width="400">
 		<img src="1.2ms_exposição.png"/ height="400" width="400">
-	</div>
+	</div></center>
 	<p> Isso se deu divido as das variações de discrepâncias nos intervalos de captura das imagens, como exemplificado por um ciclo com duração X ms, o próximo com X+1 ms e o subsequente com X-1 ms. Embora essa questão não seja prontamente aparente no projeto em sua forma atual, ela pode desempenhar um papel crítico em aplicações mais complexas. No que tange à estabilidade da imagem, a implementação de uma sólida estrutura foi altamente eficaz na mitigação das vibrações mecânicas do sistema.A estrutura mecânica pode ser vista na foto abaixo:
 	</p>
 
-	<h3><center>Desafio de Iluminação</center></h3>
+	<h3>5.2 Desafio de Iluminação</h3>
 	<p>No contexto de visão de máquina, a iluminação desempenha um papel crucial na aquisição e no processamento de imagens. Uma iluminação adequada é essencial para obter imagens de alta qualidade e garantir a precisão das técnicas de visão de máquina, como detecção de objetos, reconhecimento de padrões, segmentação e medições.A seguir, estão alguns aspectos importantes da iluminação no contexto da visão de máquina:
 	 Contraste: A iluminação adequada ajuda a melhorar o contraste entre os objetos e o fundo na imagem. Um bom contraste é essencial para destacar as características dos objetos e facilitar sua detecção e segmentação. Uma iluminação inadequada pode resultar em baixo contraste, dificultando a extração precisa das informações relevantes.
 	 Uniformidade: A iluminação uniforme é importante para evitar variações indesejadas no brilho ou na intensidade da luz na imagem. Variações na iluminação podem levar a problemas de detecção e classificação de objetos, pois podem introduzir artefatos ou distorções nas imagens capturadas.
@@ -128,45 +189,45 @@ footer {
      Em resumo, a iluminação adequada é fundamental no contexto da visão de máquina. Uma iluminação bem projetada e controlada pode melhorar o contraste, eliminar sombras e reflexos indesejados, além de fornecer imagens de alta qualidade para as técnicas de processamento de imagem. Ao considerar a iluminação para uma aplicação de visão de máquina, é importante levar em conta os requisitos específicos da aplicação e adaptar a iluminação de acordo.
 	 </p>
 	 <p> Foi o problema que mais pressinou nosso projeto devido a escolha de filtros azuis para cor dos componentes</p>
-	<div class="image123">
+	<center><div class="image123">
 		<img src="aprovado_certo.jpeg" height="400" width="400">
 		<img src="reprovado_errado.jpeg"/ height="400" width="400">
-	</div>
+	</div></center>
 	<p>Acima podemos ver o como a iluminação afetou o filtro de azul na deteção de elementos. A direita temos uma aprovação correta e a esquerda uma reprovação incorreta devido a problemas na iluminação.</p>
 	
-	<h2>Medidas Reais e Funcionamento</h2>
-	<h3> Fotos dos resultados </h3>
-	<div class="image123">
+	<h2><center>6. Medidas Reais e Funcionamento</center></h2>
+	<h3>6.1 Fotos dos resultados </h3>
+	<center><div class="image123">
 		<img src="aprovado_certo.jpeg" height="400" width="400">
 		<img src="reprovado_certo.jpeg"/ height="400" width="400">
-	</div>
-	<h3> Sistema em Funcionamento </h3>
+	</div></center>
+	<h3>6.2 Sistema em Funcionamento</h3>
 	
-	<h3> Comparação com deteção com camera monocromatica industrial </h3>
+	<h3>6.3 Comparação com deteção com camera monocromatica industrial </h3>
 	<p> Pensando numa futura aplicação real pensamos em validar como o comportamento do sistema ocorreria numa situação real e criamos alguns resultados preliminares com uma camera monocromatica junto a um sistema de aquisição de imagens de tempo-real. Essas escolhas foram feitas para poder eliminar os dois principais problemas encontrados: Jitter e Iluminação. Devido as seguintes razões:
 	</p>
 	<div div style = text-align:left>
 	<li><b>Sistema monocromatico:</b>Trabalhar com cores é um dos maiores desafios de processamento de video e como os detalhes escolhidos e/ou necessarios para uma detecção de semi-condutores não necessitaria de um filtro muito aprimorado para trablhar com cores e evitar assim ruidos e problemas com sombras.</li>
 	<li><b>Aquisição das Imagens com Sistema RT:</b> Foi sugerido este tipo de abordagem principalmente para contar o atraso do comando do tempo de exposição da camera assim como evitar que as imagens tenham delays adicionas que possam prejudicar o processamento delas.</li>
 	</div>
-	<h4> Exemplo de Detecção de SMD - Posição </h4>
-		<div class="image123">
+	<h4>Exemplo de Detecção de SMD - Posição</h4>
+		<center><div class="image123">
 		<img src="lente12.5.png" height="400" width="500">
-		<img src="lente50mm.png"/ height="400" width="500">
+		<img src="lente50mm.png"/ height="400" width="500"></center>
 	<p> Acima podemos observar o como a lente pode ser um fator determinante na escolha do meu sistema porque a mesma vai ser responsável - junto a resolução da camera - definir o nivel de detalhe do meu objeto </p> 
 	</div>
 	<h4> SMD Monocromatico ROI </h4>
-		<img src="ROI - MONO.png" height="400" width="500">
+	<center><img src="ROI - MONO.png" height="400" width="500"></center>
 	<h4> Impacto da Resolução </h4>
-	<img src="resolucao.png" height="400" width="1100">
+	<center><img src="resolucao.png" height="400" width="1100"></center>
 	<p>Outro cuidado que deve se ter com os produtos industriais é a escolha correta do nivel de resolução da camera e o casamento da distância focal da mesma. Como visto na imagem acima isso pode ser determinante para distinguir as bordas de um detalhe que diferenciem um "B" ou um "8"</p>
-	<h1> Conclusões </h1>
-	<p>Até o momento, nossa abordagem de sistema apresentou resultados promissores na detecção de problemas em transistores. A combinação de técnicas, incluindo filtragem de cores para isolar características relevantes e a detecção de Regiões de Interesse (ROI) para análise específica, resultou em uma metodologia sólida.
-	Durante as avaliações comparativas, nosso sistema demonstrou uma capacidade de detecção competitiva em relação às soluções industriais estabelecidas para falhas em componentes eletrônicos SMDs. Isso indica que nossa abordagem integrada está alcançando resultados significativos e promete contribuir para melhorias na qualidade e eficiência do controle de qualidade.
-	Além disso, uma comparação direta com uma câmera industrial monocromática foi realizada para compreender as vantagens e limitações de ambas as abordagens. Observamos que, embora as câmeras monocromáticas se destaquem em termos de sensibilidade à luz e detalhes, nossa abordagem de filtragem de cores revelou-se eficaz na detecção específica de problemas em transistores, destacando-se em cenários com cores distintas.
-	No entanto, é importante ressaltar que as câmeras monocromáticas podem ter uma vantagem em situações de iluminação desafiadoras ou quando a precisão de detalhes é crucial. Nossa abordagem, por outro lado, direciona-se especificamente à identificação precisa de problemas em componentes coloridos.
-	Embora essas conclusões preliminares sejam encorajadoras, reconhecemos a importância de continuar a avaliação em diferentes cenários de iluminação e tipos de defeitos. Além disso, planejamos explorar ainda mais a otimização de parâmetros e a análise aprofundada das especificações da câmera para um aprimoramento contínuo do sistema.
-	Essa metodologia combinada de técnicas e avaliações proporcionou uma base sólida para o desenvolvimento de sistemas de detecção de falhas em transistores, com potencial para impacto positivo na indústria de componentes eletrônicos. A comparação com câmeras monocromáticas destacou o valor da nossa abordagem em um cenário de detecção de problemas coloridos.Porem a mesma precisaria de muitas adequações.
+	<h2><center> Conclusões </center></h2>
+	<p>Até o momento, nosso empreendimento na abordagem de sistema tem produzido resultados altamente promissores na área da detecção de problemas em transistores. Essa abordagem envolve uma sinergia complexa de técnicas inovadoras, entre elas a filtragem de cores meticulosa para isolar características de importância crítica e a subsequente identificação de Regiões de Interesse (ROI) que viabilizam análises específicas, resultando em uma metodologia profundamente sólida e eficaz.
+	No decorrer das avaliações comparativas, nosso sistema ostentou uma capacidade de detecção que se revelou competitiva quando confrontada com soluções industriais já estabelecidas para identificar falhas em componentes eletrônicos SMDs. Tal resultado aponta inequivocamente para a promessa subjacente à nossa abordagem integrada, sugerindo que poderemos aperfeiçoar a qualidade e eficiência do controle de qualidade.
+	Além disso, submetemos nossa estratégia a uma comparação direta com uma câmera industrial monocromática, com o intuito de elucidar as vantagens e limitações inerentes a cada abordagem. Nossas conclusões apontam para a capacidade destacada das câmeras monocromáticas no que concerne à sensibilidade à luz e à representação detalhada. No entanto, nossa técnica de filtragem de cores se sobressaiu ao demonstrar uma eficácia considerável na detecção precisa de problemas específicos em transistores, particularmente em situações com paletas de cores distintas.
+	É crucial enfatizar que, em situações de iluminação desafiadora ou quando a precisão de detalhes é de suma importância, as câmeras monocromáticas podem conferir uma vantagem substancial. Por outro lado, nossa abordagem está estrategicamente sintonizada para a detecção minuciosa de problemas em componentes que exibem variações de cores.
+	Embora nossas conclusões iniciais sejam encorajadoras, reconhecemos a necessidade vital de expandir a avaliação em diversas circunstâncias de iluminação e categorias de defeitos. Além disso, planejamos aprofundar a otimização dos parâmetros envolvidos e conduzir análises ainda mais abrangentes das especificações da câmera, visando aprimorar de forma contínua o desempenho do sistema.
+	A metodologia eclética, que amalgama uma gama de técnicas de ponta e avaliações exaustivas, estabeleceu uma base sólida para o desenvolvimento de sistemas de detecção de falhas em transistores que possui um potencial notável para gerar impactos positivos na indústria de componentes eletrônicos. A comparação direta com câmeras monocromáticas, embora tenha realçado a utilidade intrínseca de nossa abordagem em cenários que envolvem detecção de problemas coloridos, também nos insta a reconhecer que nossa técnica demandará ajustes meticulosos para maximizar sua eficácia em todas as aplicações.
 	</p>
 	
   </article>
