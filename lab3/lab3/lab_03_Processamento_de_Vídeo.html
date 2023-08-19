@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #008000;
+  padding: 40px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+
+footer {
+  background-color: #708090;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head> #cabeçalho
+<body>
+
+<header>
+    <h1>ESZI032-17SA - Processamento de Vídeo</h1>
+    <h2>Equipe de Laboratório</h2>
+    <h3>Lab 03</h3>
+</header>
+
+<section>
+  <nav> <!--Aba Lateral com Links para arquivos pessoais de membros da tarefa individual.-->
+    <h4><center>Membros do grupo</center></h4>
+    <ul><center>
+      <li><a href="../UFABC_PV_LAB1-main/Videos e eu/index.html" target="_blank">César Augusto Brilhante Teixeira</a></li>
+	  <li><a href="../UFABC_PV_LAB1-main/Videos e Eu/Gabriel Silva Cajueiro de Campos_11018515.html" target="_blank">Gabriel Silva Cajueiro de Campos</a></li>
+	  <li><a href="../Videos e Eu/eu_sou_mayara_triveloni/eu_sou_mayara_triveloni.html">Mayara Maria Triveloni</a></li>
+    </center></ul>
+    <h4><center>Relatórios</center></h4>
+      <ul><center>
+        <li><a href="../index.html" target ="_blank">Lab 1</a></li>
+        <li><a href="../lab2/lab_02_Processamento_de_Vídeo.html" target ="_blank">Lab 2</a></li>
+        <li><a href="../lab3/lab_03_Processamento_de_Vídeo.html">Lab 3</a></li>
+        <li><a href="../lab4/lab_04_Processamento_de_Vídeo.html">Lab 4</a></li>
+		    <li><a href="../lab5/lab_05_Processamento_de_Vídeo.html">Lab 5</a></li>
+        <li><a href="../lab6/lab_06_Processamento_de_Vídeo.html">Lab 6</a></li>
+        <li><a href="../lab7/lab_07_Processamento_de_Vídeo.html">Lab 7</a></li>
+        <li><a href="../lab8/lab_08_Processamento_de_Vídeo.html">Lab 8</a></li>
+
+	  </center></ul>
+  </nav>
+  
+  <article> <!-- Texto central que indica a introdução do laboratório em questão-->
+    <h2><center>Objetivo</center></h2>
+    <p><center>O Laboratório 03, realizado pelos integrantes César Augusto Brilhante Teixeira, Gabriel Silva Cajueiro de Campos, Mayara Maria Triveloni tem por objetivo a aplicação prática dos conceitos de mudança de cores em imagens trazido em discplina.</center></p>
+<p><center>Para a realização deste laboratório, foi utilizado o Notepad++ configurado em linguagem HTML para a criação do código da disciplina as imagens geradas pela equipe no laboratório 3 relacionado a cada membro. O procedimento do laboratório será a aplicação dos códigos de Conversão de Cores e alteração dos Espaços de Cores <a href="https://docs.opencv.org/4.x/df/d9d/tutorial_py_colorspaces.html" target="_blank">deste link.</a> </center></p>
+<p><center>Em seguida, para cada um dos capítulos posteriores, haverá uma explicação do método utiilizado, bem como o entendimento prático das alterações no mesmo. Será feita uma explicação com o exemplo da foto de um integrante do grupo e, posteriormente, as imagens seguintes irão ser a replição desde recorte de código, exceto com a alteração do caminho de foto.</center></p>
+<br>
+<br>
+	  <h2><center>Imagem BGR em HSV</center></h2>
+    <h2><center>+</center></h2>
+    <h2><center>Extração de um Objeto Colorido</center></h2>
+    <br>
+	  		<p><center>De modo geral, durante a prática era tido como meta converter as cores das imagens capturadas pela Webcam de um espaço de cores para outro.</center></p>
+        <p><center>Entre as possibilidades de conversão, temos o <b>RGB ↔ GRAY</b>, onde é possível utilizar a função cv.cvtColor(img, cv.COLOR_BGR2GRAY), ou <b>BGR→HSV</b> onde se aplica a função com o sinalizador cv.cvtColor(img, cv.COLOR_BGR2HSV)</center></p>  
+        <p><center>Além disso, foi criado um aplicativo para extrair um objeto colorido em um vídeo, onde, resumidamente, o código pega cada quadro da captura, converte os espaços de cores BGR→HSV, estabelece um intervalo/limite da imagem (já em HSV) para a faixa de cor desejada e extrai o objeto colorido sozinho. O código abaixo, demonstra as técnicas aplicadas.</center></p>
+        <p><center><img src="codigo/codigo_captura.png" alt="Codigo"></center></p>
+        
+        <p><center>Nas imagens apresentadas a seguir, é possível a técnica já aplicada, para os integrantes do grupo.</center></p>
+        <br>
+        <h2><center>Mayara</center></h2>  
+        <p><center><img src="Changing Colorspaces/mayara - Webcam_Lab3_normal.png" alt="Original"></center></p>
+        <p><center><img src="Changing Colorspaces/mayara - Webcam_Lab3_mask.png" alt="Mask"></center></p>
+        <p><center><img src="Changing Colorspaces/mayara - Webcam_Lab3_res.png" alt="Res"></center></p>
+        <br>
+        <h2><center>Cesar</center></h2>  
+				<p><center><img src="Changing Colorspaces/cesar - Webcam_Lab3_normal.png" alt="Original"></center></p>
+        <p><center><img src="Changing Colorspaces/cesar - Webcam_Lab3_mask.png" alt="Mask"></center></p>
+        <p><center><img src="Changing Colorspaces/cesar - Webcam_Lab3_res.png" alt="Res"></center></p>
+        <br>
+        <h2><center>Objeto Escolhido: Tampa da Borracha</center></h2>
+				<p><center><img src="Changing Colorspaces/objeto - Webcam_Lab3_normal.png" alt="Original"></center></p>
+        <p><center><img src="Changing Colorspaces/objeto - Webcam_Lab3_mask.png" alt="Mask"></center></p>
+        <p><center><img src="Changing Colorspaces/objeto - Webcam_Lab3_res.png" alt="Res"></center></p>
+        <br>
+        <p><center>Como foi possível observar, utilizamos a técnica para diferentes cores. Em resumo, o intervalo de saturação é [0,255] e para cada cor "extraida", um intervalo de valores diferentes foi encontrado para aplicação e visualização do objeto desejado.</center></p>
+        <p><center>Para a detecção da borracha vermelha, foi inserido em um intervalo que capturasse e convertesse o espaço de cor (vermelho/avermelhado). Para isso, em <i>lower_red</i> = [0,50,50] e em <i>upper_red</i> = [10,255,255]</center></p>
+        <p><center>Para escala de cor esverdeada, o intervalo considerado esteve em  lower_green = [52,0,55] e upper_green = [104,255,255].</center></p>
+        <p><center>Por sua vez, para a detecção do verde com maior fluorescencia, os parâmetros encontrados foram:  lower = [19,91,99] e upper = [150,255,255]. Com esse intervalo, foi possível capturar ao mesmo tempo, a cor amarela (presente na capinha do celular) e o azul, que poderá ser observado na captura de vídeo, com a etapa e os resultados apresentados na sequência.</center></p>
+        <br>
+        <hr>
+        <br>
+				
+	<h2><center>Rastreamento em Vídeo</center></h2>
+	
+				<p><center>As mesmas técnicas utilizadas anteriormente, foram empregadas para o rastreamento em vídeo. O código adaptado pode ser observado a seguir:</center	></p>
+        <br>
+        <p><center><img src="codigo/codigo_video.png" alt="Codigo"></center></p>
+        <p><center>Primeiramente, assista ao vídeo original, isto é, sem o uso das técnicas e em seguida, a captura da cor em destaque.</center></p>
+        <h2><center>Mayara</center></h2>
+        <center>
+        <video src="Changing Colorspaces/video//mp4/mayara-regular.mp4" width="482" controls></video>
+        <br>
+        <video src="Changing Colorspaces/video/mp4/mayara-res.mp4" width="482" controls></video>
+        <h2><center>Cesar</center></h2>
+        <video src="Changing Colorspaces/video/mp4/cesar-regular.mp4" width="482" controls></video>
+        <br>
+        <video src="Changing Colorspaces/video/mp4/cesar-res.mp4" width="482" controls></video>
+        <br>
+        <br>
+        <p>Como citado anteriormente, foi possível analisar que com a escala/intervalo de valores adotados para esse caso, a captura de 3 cores foi realizada: o azul presente no moletom, amarelo na capinha do celular e o verde da estampa do moletom.</p>
+        <p>Em resumo, houve um entendimento, aprendizado e aplicação prática sobre a teoria apresentada nas aulas, que possibilitou a conversão de imagens de um espaço de cores para outro, como BGR↔Cinza, BGR↔HSV. Outro ponto importante e alcançado com a prática, foi a forma para encontrar os valores corretos/ideais de HSV para o rastreamento, passando os valores BGR desejados (os limites inferiores e superiores).</p>
+        </center>
+        <br>
+        <hr>
+        <br>
+			
+				
+  </article>
+</section>
+
+<footer>
+  <p>2º Quadrimestre 2023</p>
+</footer>
+
+</body>
+</html>
